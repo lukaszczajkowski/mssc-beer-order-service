@@ -1,6 +1,6 @@
 package guru.sfg.beer.order.service.services;
 
-import guru.sfg.beer.order.service.web.model.BeerDto;
+import guru.sfg.brewery.model.BeerDto;
 import org.springframework.data.crossstore.ChangeSetPersister;
 
 import java.util.Optional;
