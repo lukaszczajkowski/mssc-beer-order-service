@@ -16,9 +16,11 @@ import java.util.UUID;
 @Service
 public class BeerServiceImpl implements BeerService {
 
-    private static final String BEER_SERVICE_ENDPOINT = "/api/v1/";
-    private static final String GET_BEER_BY_ID_PATH = "beer/";
-    private static final String GET_BEER_BY_UPC_PATH = "beerUpc/";
+    public static final String BEER_SERVICE_ENDPOINT = "/api/v1/";
+    public static final String GET_BEER_BY_ID_PATH = "beer/";
+    public static final String BEER_PATH_V1 = "/api/v1/beer/";
+    public static final String BEER_UPC_PATH_V1 = "/api/v1/beerUpc/";
+    public static final String GET_BEER_BY_UPC_PATH = "beerUpc/";
 
     private final RestTemplate restTemplate;
 
