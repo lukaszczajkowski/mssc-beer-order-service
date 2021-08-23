@@ -154,19 +154,19 @@ public class BeerOrderManagerImpl implements BeerOrderManager {
             beerOrderRepository.findById(beerOrderId).ifPresentOrElse(beerOrder -> {
                 if (beerOrder.getOrderStatus().equals(statusEnum)) {
                     found.set(true);
-                    log.debug("Order found");
+                    log.debug("Order Found");
                 } else {
-                    log.debug("Order Status Not Equal. Expected: " + statusEnum.name(), " Found: " + beerOrder.getOrderStatus().name());
+                    log.debug("Order Status Not Equal. Expected: " + statusEnum.name() + " Found: " + beerOrder.getOrderStatus().name());
                 }
             }, () -> {
                 log.debug("Order Id Not Found");
             });
 
             if (!found.get()) {
-                log.debug("Sleeping for retry");
                 try {
-                    Thread.sleep(100);
-                } catch (Exception ignore) {
+                    log.debug("Sleeping for retry");
+                    Thread.sleep(5000);
+                } catch (Exception e) {
                     // do nothing
                 }
             }
